@@ -1,9 +1,5 @@
-//
-// Created by moham on 08/12/2024.
-//
+
 #include "BlockChain.h"
-
-
 
 int BlockChainGetSize(const BlockChain &blockChain) {
     int count = 0;
@@ -30,28 +26,19 @@ int BlockChainPersonalBalance(const BlockChain &blockChain, const string &name) 
     return ReceivedValue - SendedValue;
 }
 
-void BlockChainAppendTransaction(BlockChain &blockChain
-                                 ,unsigned int value,const string &sender,
-                                 const string &receiver,
-        const string &timestamp) {
-    Transaction newTransaction;
-    newTransaction.value = value;
-    newTransaction.receiver = receiver;
-    newTransaction.sender = sender;
-    Block *newBlock = new Block{newTransaction, timestamp, nullptr};
-    newBlock->next = blockChain.head;
-    blockChain.head = newBlock;
-
-}
-
-void BlockChainAppendTransaction(
-        BlockChain &blockChain,
-        const Transaction &transaction,
-        const string &timestamp
-) {
+void Append_block(BlockChain &blockChain, const Transaction &transaction, const string &timestamp) {
     Block *newBlock = new Block{transaction, timestamp, nullptr};
     newBlock->next = blockChain.head;
     blockChain.head = newBlock;
+}
+
+void BlockChainAppendTransaction(BlockChain &blockChain, unsigned int value, const string &sender, const string &receiver, const string &timestamp) {
+    Transaction newTransaction{value, sender, receiver};
+    Append_block(blockChain, newTransaction, timestamp);
+}
+
+void BlockChainAppendTransaction(BlockChain &blockChain, const Transaction &transaction, const string &timestamp) {
+    Append_block(blockChain, transaction, timestamp);
 }
 
 BlockChain BlockChainLoad(ifstream &file) {

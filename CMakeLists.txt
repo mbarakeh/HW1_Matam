@@ -8,7 +8,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # Add executable
 add_executable(HW1_Matam
         BlockChain.cpp
-        mtm_blockchain.cpp
+        main.cpp
         Transaction.cpp
         Utilities.cpp
         )
