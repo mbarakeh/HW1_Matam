@@ -22,8 +22,8 @@ Tell us a bit about yourselves!
 	- Desirable grade in Matam: 150
 	- which TA's song you liked the most: none
 
-	- Second student's name:
-	- Favorite singer:
-	- Favorite song:
-	- Desirable grade in Matam:
-	- which TA's song you liked the most: 
+	- Second student's name: karam bishara
+	- Favorite singer: melhim barakat
+	- Favorite song: wla mara
+	- Desirable grade in Matam: 151 
+	- which TA's song you liked the most: none
